@@ -14,14 +14,14 @@ func Test_Stack(t *testing.T) {
 	assert.Nil(t, stack.Pop())
 	assert.Nil(t, stack.Peek())
 
-	stack.Push(1)
-	stack.Push(2)
-	stack.Push(3)
-	assert.Equal(t, 3, stack.Len())
+	for i := 1; i <= 4; i++ {
+		stack.Push(i)
+	}
+	assert.Equal(t, 4, stack.Len())
 
 	value = stack.Pop()
-	assert.Equal(t, 3, value)
+	assert.Equal(t, 4, value)
 
 	value = stack.Peek()
-	assert.Equal(t, 2, value)
+	assert.Equal(t, 3, value)
 }
